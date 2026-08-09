@@ -1174,14 +1174,14 @@ function handleCompleteOrder(orderId: string) {
                       {currentSession.phone}
                     </div>
                     <div
-  className={`mt-3 inline-flex items-center gap-3 rounded-full border px-4 py-2 ${
+  className={`mt-3 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 ${
     currentSession.status === "Вільний"
       ? "border-emerald-400/20 bg-emerald-500/[0.13]"
       : "border-[#ff6500]/25 bg-[#ff6500]/10"
   }`}
 >
   <span
-    className={`h-3 w-3 rounded-full ${
+    className={`h-2.5 w-2.5 rounded-full ${
       currentSession.status === "Вільний"
         ? "bg-emerald-400 shadow-[0_0_13px_rgba(52,211,153,0.85)]"
         : "bg-[#ff6500] shadow-[0_0_13px_rgba(255,101,0,0.85)]"
@@ -1189,7 +1189,7 @@ function handleCompleteOrder(orderId: string) {
   />
 
   <span
-    className={`text-[20px] font-bold ${
+    className={`text-[17px] font-bold ${
       currentSession.status === "Вільний"
         ? "text-emerald-400"
         : "text-[#ff7519]"
@@ -2210,18 +2210,6 @@ function handleCompleteOrder(orderId: string) {
 </aside>
               </div>
 
-              <footer className="flex shrink-0 flex-col items-center justify-between gap-3 rounded-[15px] border border-white/[0.08] bg-[#081017] px-5 py-2 text-[13px] sm:flex-row">
-                <div className="flex items-center gap-3 text-emerald-400">
-                  <span className="h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_13px_rgba(52,211,153,0.8)]" />
-                  <span className="font-semibold">З&apos;єднання активне</span>
-                </div>
-                <p className="text-[#afb5be]">
-                  Система працює • Нові замовлення надходять автоматично
-                </p>
-                <span className="text-emerald-400">
-                  <WifiIcon size={25} />
-                </span>
-              </footer>
             </section>
           </div>
         </div>
@@ -3042,14 +3030,23 @@ function ProfileMetric({
   orange?: boolean;
 }) {
   return (
-    <div className="flex flex-col justify-center px-5">
-      <div className="flex items-center gap-3 text-[#d5d8dd]">
-        <span className={orange ? "text-[#ff6500]" : "text-white"}>{icon}</span>
-        <span className="text-[14px] text-[#c2c6cc]">{label}</span>
-      </div>
-      <p className="mt-3 text-[26px] font-black leading-none">{value}</p>
-      <p className="mt-3 text-[13px] text-[#a0a7b0]">{note}</p>
-    </div>
+    <div className="flex flex-col justify-center px-3 sm:px-5">
+  <div className="flex min-h-[44px] items-center gap-2 text-[#d5d8dd]">
+    <span className={orange ? "text-[#ff6500]" : "text-white"}>{icon}</span>
+
+    <span className="text-[13px] leading-tight text-[#c2c6cc] sm:text-[14px]">
+      {label}
+    </span>
+  </div>
+
+  <p className="mt-1 text-[22px] font-black leading-none sm:text-[24px]">
+    {value}
+  </p>
+
+  <p className="mt-3 text-[12px] text-[#a0a7b0] sm:text-[13px]">
+    {note}
+  </p>
+</div>
   );
 }
 
