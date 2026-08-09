@@ -2214,7 +2214,7 @@ function handleCompleteOrder(orderId: string) {
           </div>
         </div>
         <nav className="fixed inset-x-0 bottom-0 z-[90] border-t border-white/[0.10] bg-[#071017]/95 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
-  <div className="mx-auto grid h-[72px] max-w-[620px] grid-cols-4">
+  <div className="mx-auto grid h-[72px] max-w-[620px] grid-cols-5">
     <button
       type="button"
       onClick={() => setActiveSection("home")}
@@ -2243,6 +2243,32 @@ function handleCompleteOrder(orderId: string) {
 
       Нові
     </button>
+
+    <button
+  type="button"
+  onClick={() => setActiveSection("income")}
+  className="relative flex flex-col items-center justify-center gap-1 text-[11px] font-semibold"
+>
+  <span
+    className={`flex h-[50px] w-[50px] items-center justify-center rounded-full border transition ${
+      activeSection === "income"
+        ? "border-[#ff6500] bg-[#ff6500]/10 text-[#ff6500] shadow-[0_0_18px_rgba(255,101,0,0.30)]"
+        : "border-[#ff6500]/45 bg-[#071018] text-[#ff6500]"
+    }`}
+  >
+    <WalletOutlineIcon size={23} />
+  </span>
+
+  <span
+    className={
+      activeSection === "income"
+        ? "text-[#ff6500]"
+        : "text-[#9ca4ae]"
+    }
+  >
+    Дохід
+  </span>
+</button>
 
     <button
       type="button"
