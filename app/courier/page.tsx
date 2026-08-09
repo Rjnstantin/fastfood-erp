@@ -1151,9 +1151,13 @@ function handleCompleteOrder(orderId: string) {
             <section className="flex min-h-0 min-w-0 flex-col gap-3">
               <section className="grid shrink-0 items-center gap-4 rounded-[20px] border border-white/[0.08] bg-[linear-gradient(145deg,#0a1117,#071017)] px-5 py-4 shadow-[0_24px_70px_rgba(0,0,0,0.30)] xl:grid-cols-[minmax(430px,1.2fr)_minmax(500px,1fr)]">
                 <div className="flex min-w-0 items-center gap-6">
-                  <div className="flex h-[132px] w-[132px] shrink-0 items-center justify-center rounded-full border-2 border-[#ff6500] bg-[#091017] text-[#ff6500] shadow-[0_0_30px_rgba(255,101,0,0.16)]">
-                    <CourierAvatarIcon size={100} />
-                  </div>
+                  <div className="h-[132px] w-[132px] shrink-0 overflow-hidden rounded-full border-2 border-[#ff5a00]">
+  <img
+    src="/couriers/teptya-konstantin.jpg"
+    alt={currentSession.courierName}
+    className="h-full w-full object-cover"
+  />
+</div>
 
                   <div className="min-w-0">
                     <h1 className="truncate text-[30px] font-black tracking-[-0.5px] sm:text-[34px]">
