@@ -1,65 +1,70 @@
-import Image from "next/image";
+import Header from "../components/Header/Header";
+import Hero from "../components/Hero/Hero";
+import BurgerScene from "../components/BurgerScene/BurgerScene";
+import LoginCard from "../components/Login/LoginCard";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen overflow-x-hidden bg-[#030405] px-4 py-4">
+      <section className="relative mx-auto min-h-[820px] w-full max-w-[1480px] overflow-visible rounded-[28px] border border-orange-950/70 bg-[#030405]">
+        <Header />
+
+        <div className="grid min-h-[740px] grid-cols-[32%_36%_32%] items-center pt-16">
+          {/* Левая часть */}
+          <div className="relative z-10 self-stretch px-10 pb-8">
+            <Hero />
+          </div>
+
+          {/* Центральный бургер */}
+          <div className="relative z-0 flex min-h-[690px] items-center justify-center overflow-visible">
+            <BurgerScene />
+          </div>
+
+          {/* Правая часть */}
+          <div className="relative z-10 flex min-h-[720px] items-center px-5 pb-5 pt-2">
+            <LoginCard />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+                {/* Нижняя панель */}
+        <div className="absolute bottom-5 left-0 right-0 z-20 flex items-center justify-center gap-10 text-[13px] text-zinc-500">
+          {/* Telegram Bot */}
+          <button className="flex items-center gap-2 transition hover:text-white">
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="#229ED9"
+              aria-hidden="true"
+            >
+              <path d="M21.8 3.2 2.9 10.5c-1.3.5-1.3 1.3-.2 1.6l4.8 1.5 1.9 5.8c.2.7.1 1 .8 1 .5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.9L23.7 5c.3-1.4-.5-2-1.9-1.8ZM9.2 13.2l9.4-5.9c.5-.3.9-.1.5.2l-7.7 7-0.3 3.5-1.9-4.8Z" />
+            </svg>
+            <span>Telegram Bot</span>
+          </button>
+
+          {/* App Store */}
+          <button className="flex items-center gap-2 transition hover:text-white">
+            <span className="text-[19px] leading-none text-white"></span>
+            <span>App Store</span>
+          </button>
+
+          {/* Google Play */}
+          <button className="flex items-center gap-2 transition hover:text-white">
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path fill="#34A853" d="M3 2.8v18.4l9.2-9.2L3 2.8Z" />
+              <path fill="#4285F4" d="m3 2.8 11.4 6.6-2.2 2.6L3 2.8Z" />
+              <path fill="#FBBC04" d="m3 21.2 11.4-6.6-2.2-2.6L3 21.2Z" />
+              <path
+                fill="#EA4335"
+                d="m14.4 9.4 4.8 2.8c.7.4.7 1.2 0 1.6l-4.8 2.8-2.2-4.6 2.2-2.6Z"
+              />
+            </svg>
+            <span>Google Play</span>
+          </button>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
