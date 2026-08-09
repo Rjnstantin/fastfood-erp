@@ -3047,7 +3047,7 @@ function ProfileMetric({
         <span className={orange ? "text-[#ff6500]" : "text-white"}>{icon}</span>
         <span className="text-[14px] text-[#c2c6cc]">{label}</span>
       </div>
-      <p className="mt-4 text-[34px] font-black leading-none">{value}</p>
+      <p className="mt-3 text-[26px] font-black leading-none">{value}</p>
       <p className="mt-3 text-[13px] text-[#a0a7b0]">{note}</p>
     </div>
   );
