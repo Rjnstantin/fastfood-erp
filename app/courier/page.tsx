@@ -1155,12 +1155,12 @@ function handleCompleteOrder(orderId: string) {
   <img
     src="/couriers/teptya-konstantin.jpg"
     alt={currentSession.courierName}
-    className="h-full w-full object-cover"
+    className="h-full w-full object-cover object-[47%_50%]"
   />
 </div>
 
                   <div className="min-w-0">
-                    <h1 className="truncate text-[30px] font-black tracking-[-0.5px] sm:text-[34px]">
+                    <h1 className="text-[24px] font-black leading-tight tracking-[-0.5px] sm:text-[34px]">
                       {currentSession.courierName}
                     </h1>
                     <div className="mt-2 flex items-center gap-3 text-[17px] text-[#c7cbd1]">
