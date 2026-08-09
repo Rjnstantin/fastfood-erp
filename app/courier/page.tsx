@@ -2221,6 +2221,67 @@ function handleCompleteOrder(orderId: string) {
             </section>
           </div>
         </div>
+        <nav className="fixed inset-x-0 bottom-0 z-[90] border-t border-white/[0.10] bg-[#071017]/95 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden">
+  <div className="mx-auto grid h-[72px] max-w-[620px] grid-cols-4">
+    <button
+      type="button"
+      onClick={() => setActiveSection("home")}
+      className={`flex flex-col items-center justify-center gap-1 text-[11px] font-semibold ${
+        activeSection === "home" ? "text-[#ff6500]" : "text-[#9ca4ae]"
+      }`}
+    >
+      <HomeIcon size={23} />
+      Головна
+    </button>
+
+    <button
+      type="button"
+      onClick={() => setActiveSection("newOrders")}
+      className={`relative flex flex-col items-center justify-center gap-1 text-[11px] font-semibold ${
+        activeSection === "newOrders" ? "text-[#ff6500]" : "text-[#9ca4ae]"
+      }`}
+    >
+      <ScooterIcon size={25} />
+
+      {newOrders.length + simpleTasks.length > 0 && (
+        <span className="absolute right-[20%] top-[8px] flex h-5 min-w-5 items-center justify-center rounded-full bg-[#ff5a00] px-1 text-[10px] font-black text-white">
+          {newOrders.length + simpleTasks.length}
+        </span>
+      )}
+
+      Нові
+    </button>
+
+    <button
+      type="button"
+      onClick={() => setActiveSection("myOrders")}
+      className={`relative flex flex-col items-center justify-center gap-1 text-[11px] font-semibold ${
+        activeSection === "myOrders" ? "text-[#ff6500]" : "text-[#9ca4ae]"
+      }`}
+    >
+      <ClipboardIcon size={23} />
+
+      {myOrders.length + mySimpleTasks.length > 0 && (
+        <span className="absolute right-[20%] top-[8px] flex h-5 min-w-5 items-center justify-center rounded-full bg-[#ff5a00] px-1 text-[10px] font-black text-white">
+          {myOrders.length + mySimpleTasks.length}
+        </span>
+      )}
+
+      Моє
+    </button>
+
+    <button
+      type="button"
+      onClick={() => setActiveSection("archive")}
+      className={`flex flex-col items-center justify-center gap-1 text-[11px] font-semibold ${
+        activeSection === "archive" ? "text-[#ff6500]" : "text-[#9ca4ae]"
+      }`}
+    >
+      <ArchiveIcon size={23} />
+      Архів
+    </button>
+  </div>
+</nav>
         {isSupportModalOpen && (
   <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75">
     <div className="rounded-[20px] border border-white/10 bg-[#0a1016] p-6 text-white">
