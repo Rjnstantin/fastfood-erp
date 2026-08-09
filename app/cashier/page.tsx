@@ -2016,8 +2016,14 @@ ${
       )}
             <CourierDialog
         open={showCourierDialog}
-        currentPoint={getCurrentPoint()}
-        employeeName={getCurrentEmployeeName()}
+        currentPoint={
+  typeof window !== "undefined" ? getCurrentPoint() : "Портова"
+}
+employeeName={
+  typeof window !== "undefined"
+    ? getCurrentEmployeeName()
+    : "Працівник каси"
+}
         onClose={() => setShowCourierDialog(false)}
       />
     </main>
