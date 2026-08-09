@@ -1034,7 +1034,7 @@ function handleCompleteOrder(orderId: string) {
     ).padStart(2, "0")}`;
 
     return (
-      <main className="h-[100dvh] overflow-hidden bg-[#020508] text-white">
+      <main className="min-h-[100dvh] bg-[#020508] pb-[calc(82px+env(safe-area-inset-bottom))] text-white lg:h-[100dvh] lg:overflow-hidden lg:pb-0">
         <div className="mx-auto flex h-full w-full max-w-[1600px] flex-col px-4 py-2 lg:px-5">
           <header className="flex h-[64px] shrink-0 items-center justify-between gap-4 px-4">
             <div className="flex min-w-0 items-center gap-6">
@@ -1058,8 +1058,8 @@ function handleCompleteOrder(orderId: string) {
             </button>
           </header>
 
-          <div className="grid min-h-0 flex-1 gap-3 pb-2 lg:grid-cols-[292px_minmax(0,1fr)]">
-            <aside className="flex min-h-0 flex-col rounded-[20px] border border-white/[0.08] bg-[linear-gradient(180deg,#0b1117,#071017)] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.38)]">
+          <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 pb-2 lg:grid-cols-[292px_minmax(0,1fr)]">
+            <aside className="hidden min-h-0 flex-col rounded-[20px] border border-white/[0.08] bg-[linear-gradient(180deg,#0b1117,#071017)] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.38)] lg:flex">
               <nav className="space-y-2">
   <CourierNavButton
     active={activeSection === "home"}
